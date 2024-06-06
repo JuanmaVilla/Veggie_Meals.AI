@@ -24,6 +24,7 @@ def classify_fruit(img):
 # import the OpenAI Python library for calling the OpenAI API
 from openai import OpenAI
 
+client = OpenAI(api_key='sk-proj-W8VQBjogkecViLxwitF4T3BlbkFJD0vFIcnyWKCYfugdoWb5')
 
 
 def generate_recipe(ingredients):
