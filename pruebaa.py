@@ -113,5 +113,49 @@ if st.button("Generar receta con los ingredientes"):
         st.warning("No has añadido ningún ingrediente todavía 🥹")
 
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #f5deb3;
+    }
+    .title {
+        font-size: 48px;
+        font-weight: bold;
+        color: #5d3a1a;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .subtitle {
+        font-size: 24px;
+        color: #5d3a1a;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .info-box {
+        font-size: 18px;
+        color: #5d3a1a;
+    }
+    .upload-box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .btn-box {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .columns {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 
 
