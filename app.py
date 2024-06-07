@@ -25,7 +25,7 @@ def classify_fruit(img):
 # OpenAI API
 from openai import OpenAI
 
-client = OpenAI(api_key='sk-proj-PDPcw8rcNZ8LhaOBI2JRT3BlbkFJhicMAy5BW9degy48IJfT')
+client = OpenAI(api_key='sk-proj-WACVB4Mj6lG3Zn8wPqSGT3BlbkFJAOO13gX5CkhkmHHVIEAm')
 
 def generate_recipe(ingredients):
     MODEL = "gpt-3.5-turbo"
