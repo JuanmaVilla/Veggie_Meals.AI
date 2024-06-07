@@ -3,3 +3,4 @@ pandas
 streamlit==1.34
 pillow
 openai
+tensorflow==2.13 
