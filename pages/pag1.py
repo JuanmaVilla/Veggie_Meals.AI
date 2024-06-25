@@ -41,34 +41,13 @@ def generate_recipe(ingredients, meal_type):
 # Streamlit App
 st.set_page_config(layout='wide')
 
-# CSS para mejorar la estética
-st.markdown("""
-    <style>
-    .reportview-container {
-        background: #f0f2f6;
-    }
-    .sidebar .sidebar-content {
-        background: #f0f2f6;
-    }
 
-    .stButton>button {
-        background-color: #FFA07A;
-        color: white;
-        border-radius: 10px;
-        padding: 10px;
-    }
-
-    .stInfo, .stSuccess, .stWarning, .stError {
-        background-color: #F5F5DC;
-        color: black;
-    }
-    </style>
-    """, unsafe_allow_html=True)
 
 st.image('logo.png', caption=None, width=300, use_column_width=None)
 st.title("Recetas vegetarianas con AI! 😉")
+st.subheader("En esta sección crea recetas para cualquier moemnto del día!")
 st.subheader("¡Toma fotos de los ingredientes que tengas en tu cocina y los identificamos!")
-st.subheader("Luego, podrás crear recetas con los ingredientes que subiste!🍴")
+st.subheader("Luego, podrás crear recetas, para cualquier momento del día, con los ingredientes que subiste!🍴 Elige entre desayunos, postres, almuerzos o cenas. Tenemos lo mejor para vos!")
 
 # Lista de ingredientes en sesión
 if 'ingredientes' not in st.session_state:
@@ -175,3 +154,26 @@ else:
     st.info("Aún no has generado ninguna receta.")
 
 
+# CSS para mejorar la estética
+st.markdown("""
+    <style>
+    .reportview-container {
+        background: #f0f2f6;
+    }
+    .sidebar .sidebar-content {
+        background: #f0f2f6;
+    }
+
+    .stButton>button {
+        background-color: #FFA07A;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .stInfo, .stSuccess, .stWarning, .stError {
+        background-color: #F5F5DC;
+        color: black;
+    }
+    </style>
+    """, unsafe_allow_html=True)

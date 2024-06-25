@@ -25,7 +25,7 @@ def classify_fruit(img):
 # OpenAI API
 from openai import OpenAI
 
-client = OpenAI(api_key='sk-proj-WACVB4Mj6lG3Zn8wPqSGT3BlbkFJAOO13gX5CkhkmHHVIEAm')
+client = OpenAI(api_key='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')
 
 def generate_recipe(ingredients):
     MODEL = "gpt-3.5-turbo"
@@ -42,41 +42,13 @@ def generate_recipe(ingredients):
 # Streamlit App
 st.set_page_config(layout='wide')
 
-# CSS para mejorar la estética
-st.markdown("""
-    <style>
-    .reportview-container {
-        background: #f0f2f6;
-    }
-    .sidebar .sidebar-content {
-        background: #f0f2f6;
-    }
-    .css-1d391kg {
-        text-align: center;
-    }
-    .stButton>button {
-        background-color: #FFA07A;
-        color: white;
-        border-radius: 10px;
-        padding: 10px;
-    }
-    .stSpinner {
-        text-align: center;
-    }
-    .stInfo, .stSuccess, .stWarning, .stError {
-        background-color: #F5F5DC;
-        color: black;
-    }
-    .stAlert, .stText {
-        text-align: center;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+
 
 st.image('logo.png', caption=None, width=300, use_column_width=None)
 st.title("Recetas vegetarianas con AI! 😉")
 st.subheader("¡Toma fotos de los ingredientes que tengas en tu cocina y los identificamos!")
 st.subheader("Luego, podrás crear recetas con los ingredientes que subiste!🍴")
+
 
 # Lista de ingredientes en sesión
 if 'ingredientes' not in st.session_state:
@@ -106,12 +78,11 @@ def procesar_imagen(image_file):
         with st.spinner('Analizando imagen...'):
             label, confidence_score = classify_fruit(image)
             label_description = label.split(maxsplit=1)[1]  # Divide la etiqueta por el primer espacio y toma el segundo elemento
-            label2 = label_description  # Guarda la descripción en label2
 
-            st.success(label2)  # Muestra la etiqueta sin el número
+            st.success(label_description)  # Muestra la etiqueta sin el número
 
             # Añadir el ingrediente a la lista en sesión
-            st.session_state.ingredientes.append(label2)
+            st.session_state.ingredientes.append(label_description)
 
     with col3:
         st.info("Ingredientes añadidos:")
@@ -156,3 +127,24 @@ else:
     st.info("Aún no has generado ninguna receta.")
 
 
+# CSS 
+st.markdown("""
+    <style>
+    .reportview-container {
+        background: #f0f2f6;
+    }
+    .sidebar .sidebar-content {
+        background: #f0f2f6;
+    }
+    .stButton>button {
+        background-color: #FFA07A;
+        color: white;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .stInfo, .stSuccess, .stWarning, .stError {
+        background-color: #F5F5DC;
+        color: black;
+    }
+    </style>
+    """, unsafe_allow_html=True)
