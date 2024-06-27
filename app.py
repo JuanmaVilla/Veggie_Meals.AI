@@ -48,7 +48,7 @@ def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingred
             f"en un formato como de libro de cocina. Tiene que ser amigable e intuitivo. Muchas gracias :)"
         )
 
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model=MODEL,
         messages=[
             {"role": "system", "content": "Eres una chef de cocina vegetariana que escribe un libro de cocina."},
