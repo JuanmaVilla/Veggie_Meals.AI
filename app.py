@@ -24,7 +24,7 @@ def classify_fruit(img):
 # OpenAI API
 from openai import OpenAI
 
-client = OpenAI(api_key='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')
+openai.api_key = st.secrets["openai"]["api_key"]
 
 def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingredients):
     MODEL = "gpt-3.5-turbo"
@@ -48,7 +48,7 @@ def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingred
             f"en un formato como de libro de cocina. Tiene que ser amigable e intuitivo. Muchas gracias :)"
         )
 
-    response = client.chat.completions.create(
+    response = openai.ChatCompletion.create(
         model=MODEL,
         messages=[
             {"role": "system", "content": "Eres una chef de cocina vegetariana que escribe un libro de cocina."},
@@ -56,7 +56,7 @@ def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingred
         ],
         temperature=temperature,
     )
-    return response.choices[0].message.content
+    return response.choices[0].message['content']
 
 # Streamlit App
 st.set_page_config(layout='wide')
