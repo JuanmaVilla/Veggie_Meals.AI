@@ -24,7 +24,7 @@ def classify_fruit(img):
 # OpenAI API
 from openai import OpenAI
 
-client = OpenAI(api_key='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')
+client = OpenAI(api_key='sk-proj-OgcX2gKKz9TDe1BEdQohT3BlbkFJM6Jm3uEYXuSbs2v7cYiY')
 
 def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingredients):
     MODEL = "gpt-3.5-turbo"
@@ -63,8 +63,8 @@ st.set_page_config(layout='wide')
 
 st.image('logo.png', caption=None, width=300, use_column_width=None)
 st.title("Recetas vegetarianas con AI! 😉")
-st.subheader("En esta sección crea recetas para cualquier momento del día!")
-st.subheader("¡Toma fotos de los ingredientes que tengas en tu cocina y los identificamos!")
+st.subheader("Crea recetas para cualquier momento del día!")
+st.subheader("¡Toma fotos de los ingredientes que tengas en tu cocina y los identificamos! ")
 st.subheader("Luego, podrás crear recetas, para cualquier momento del día, con los ingredientes que subiste!🍴 Elige entre desayunos, postres, almuerzos o cenas. Tenemos lo mejor para vos!")
 
 # Lista de ingredientes en sesión
