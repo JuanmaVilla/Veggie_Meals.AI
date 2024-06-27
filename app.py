@@ -48,7 +48,7 @@ def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingred
             f"en un formato como de libro de cocina. Tiene que ser amigable e intuitivo. Muchas gracias :)"
         )
 
-    response = openai.chat.completions.create(
+    response = openai.api_key.chat.completions.create(
         model=MODEL,
         messages=[
             {"role": "system", "content": "Eres una chef de cocina vegetariana que escribe un libro de cocina."},
@@ -56,7 +56,7 @@ def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingred
         ],
         temperature=temperature,
     )
-    return response.choices[0].message['content']
+    return response.choices[0].message.content
 
 # Streamlit App
 st.set_page_config(layout='wide')
