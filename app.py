@@ -24,7 +24,7 @@ def classify_fruit(img):
 # OpenAI API
 from openai import OpenAI
 
-client = OpenAI(api_key='sk-proj-WACVB4Mj6lG3Zn8wPqSGT3BlbkFJAOO13gX5CkhkmHHVIEAm')
+client = OpenAI(api_key='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')
 
 def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingredients):
     MODEL = "gpt-3.5-turbo"
@@ -135,7 +135,7 @@ for i, ingrediente in enumerate(st.session_state.ingredientes):
 
 # Slider para ajustar la creatividad de la receta
 st.subheader("Ajusta la creatividad de la receta:")
-temperature = st.slider("Creatividad", 0.0, 1.0, 0.5)
+temperature = st.slider("Creatividad", 0.0, 1.0, 0.0)
 
 # Checkbox para incluir ingredientes promocionados
 st.subheader("¿Incluir ingredientes promocionados?")
