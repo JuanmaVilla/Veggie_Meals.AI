@@ -61,7 +61,7 @@ def generate_recipe(ingredients, meal_type, temperature, include_promoted_ingred
 # Streamlit App
 st.set_page_config(layout='wide')
 
-st.image('logo.png', caption=None, width=850, use_column_width=None)
+st.image('logo.png', caption=None, width=500, use_column_width=None)
 st.title("Recetas vegetarianas con AI! 😉")
 st.subheader("Crea recetas para cualquier momento del día!")
 st.subheader("¡Toma fotos de los ingredientes que tengas en tu cocina y los identificamos! ")
